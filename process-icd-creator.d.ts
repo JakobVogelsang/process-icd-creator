@@ -1,4 +1,6 @@
 import { LitElement, TemplateResult } from 'lit';
+import '@material/mwc-dialog';
+import type { Dialog } from '@material/mwc-dialog';
 import './sld-viewer.js';
 import '@openenergytools/filterable-lists/dist/action-list.js';
 export default class ProcessIcdCreator extends LitElement {
@@ -7,14 +9,21 @@ export default class ProcessIcdCreator extends LitElement {
     get ied(): Element | null;
     get substation(): Element | null;
     parent?: Element;
+    lNodeForLink?: Element;
+    lNodeForResolve?: Element;
+    selectedAnyLn?: Element;
+    showLinkDialog: boolean;
+    showDoReLinkDialog: boolean;
+    selectedDo: any;
     libInput: HTMLInputElement;
     icdInput: HTMLInputElement;
-    selectedTypeLNode?: Element;
-    selectedAnyLn?: Element;
-    linkLNode(anyLn: Element): void;
-    private renderICDSelection;
-    private renderLinks;
+    lnPicker: Dialog;
+    private linkLNode;
     private loadSubstationFromTemplate;
+    private renderDOs;
+    private renderCdcMappingDialog;
+    private renderLnMappingDialog;
+    private renderLNodes;
     private renderICDInputs;
     render(): TemplateResult<1>;
     static styles: import("lit").CSSResult;

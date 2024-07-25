@@ -11926,14 +11926,13 @@ class ProcessIcdCreator extends s$2 {
                             window.alert(JSON.stringify(diff, null, 2));
                         },
                     },
-                    /*
                     {
-                      icon: 'subdirectory_arrow_left',
-                      label: 'differences',
-                      callback: () => {
-                        this.lNodeForResolve = lNode;
-                      },
-                    }, */
+                        icon: 'subdirectory_arrow_left',
+                        label: 'differences',
+                        callback: () => {
+                            this.lNodeForResolve = lNode;
+                        },
+                    },
                 ],
             };
             return item;

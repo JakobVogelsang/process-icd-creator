@@ -11860,7 +11860,7 @@ class ProcessIcdCreator extends s$2 {
     }
     renderLnMappingDialog() {
         var _a, _b;
-        const items = Array.from((_b = (_a = this.ied) === null || _a === void 0 ? void 0 : _a.querySelectorAll(':scope LN0,:scope LN')) !== null && _b !== void 0 ? _b : [])
+        const items = Array.from((_b = (_a = this.doc) === null || _a === void 0 ? void 0 : _a.querySelectorAll(':root > IED LN0,:root > IED LN')) !== null && _b !== void 0 ? _b : [])
             .filter(anyLn => fits(anyLn, this.lNodeForLink))
             .map(anyLn => {
             const item = {
